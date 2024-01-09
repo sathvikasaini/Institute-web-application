@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% block title %}<title>feedbackpage</title>{% endblock %}
+  </head>
+  <body>
+    {% block content %}
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-center text-white bg-info pb-2">FEEDBACK</h1>
+
+        </div>
+
+      </div>
+        <div class="offset-md-3 col-md-6">
+          <br>
+          <form method="post">
+            {% csrf_token %}
+             {{ form }}
+             <center class="mt-2">
+               <input type="submit" value="Comment" class="btn btn-info">
+               <input type="reset" value="clear" class="btn btn-danger"><br>
+             </center>
+          </form>
+          {% if comments %}
+            {% for comment in comments %}
+            <blockquote class="blockquote text-justify">
+              <p class="mb-0">{{ comment.content }}</p>
+              <footer class="blockquote-footer">by <cite title="Source Title">{{ comment.user|capfirst }}</cite></footer>
+
+            </blockquote>
+            {% endfor %}
+            {% endif %}
+
+        </div>
+
+      </div>
+
+    </div>
+    {% endblock %}
+  </body>
+</html>

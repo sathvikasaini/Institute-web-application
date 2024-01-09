@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% block title %}<title> contactpage</title>{% endblock %}
+  </head>
+  <body>
+    {% block content %}
+    <style media="screen">
+      .cls1{
+        font-size: 20px;
+      }
+      input[name]{
+        margin-top:-5px;
+      }
+    </style>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2">
+          <img src="{% static 'images/logo.jpg' %}" style="height:180px;width:200px" class="border">
+        </div>
+        <div class="col-md-10">
+          <h1 class="text-center text-white bg-info pb-2 px-4 py-4 ">Want to join us</h1>
+          <div class="offset-md-2 col-md-4">
+            <img src="{% static 'images/reg.jpeg' %}" style="height:100px; width:600px; border">
+        </div>
+
+      </div>
+
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <br>
+          <h1 class="text-center text-white bg-info pb-2">REGISTRATION</h1>
+          <form method="post" class="border shadow px-3 py-3">
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <center>
+            <input type="submit"  value="submit" class="btn btn-info">
+            <input type="reset"  value="reset" class="btn btn-danger">
+          </center>
+
+          </form>
+
+        </div>
+        <div class="col-md-6">
+          <br>
+          <h1 class="text-center text-white bg-info pb-2">LOCATION</h1>
+          <br>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.445043611646!2d78.44320177540713!3d17.438400501333117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb910956383b7f%3A0xb25b7c2fe2e4fd5d!2sNarayana%20Tech%20House!5e0!3m2!1sen!2sin!4v1704518529349!5m2!1sen!2sin" width="600" height="450" style="border:0";" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        </div>
+
+      </div>
+
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4">
+          <br>
+          <h1 class="text-center bg-info text-white pb-2">Branch1</h1>
+          <pre class="cls1">
+             SathTechHouse flat #302
+             Kukatpally
+             hyderabad
+          </pre>
+        </div>
+        <div class="col-md-4">
+          <br>
+          <h1 class="text-center bg-info text-white pb-2">Branch2</h1>
+          <pre class="cls1">
+            SathTechHouse flat #305
+            Kacheguda branch
+            hyderabad
+          </pre>
+
+        </div>
+        <div class="col-md-4">
+          <br>
+          <h1 class="text-center bg-info text-white pb-2">Branch3</h1>
+          <pre class="cls1">
+            SathTechHouse flat #305
+            Ameerpet branch
+            hyderabad
+          </pre>
+
+        </div>
+
+      </div>
+
+    </div>
+    {% endblock %}
+
+  </body>
+</html>

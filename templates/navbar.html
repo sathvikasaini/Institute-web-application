@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+  <a class="navbar-brand text-italic" href="#">CreativeInstitute</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'homepage' %}">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'servicespage' %}">services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'gallerypage' %}">gallery</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'contactpage' %}">contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'feedbackpage' %}">Feedback</a>
+      </li>
+    </ul>
+  </div>
+  <span class="text-white">Hi {{ request.user|capfirst }},</span>&ensp;
+  <a href="{% url 'logoutpage' %}" class="text-white">Logout</a>
+</nav>

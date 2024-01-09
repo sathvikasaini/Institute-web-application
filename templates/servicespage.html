@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% block title %}<title>services page</title>{% endblock %}
+  </head>
+  <body>
+    {% block content %}
+    <img src="{% static 'images/ser.jpg' %}" style="width:100%;height:250px"class="img-thumbnail">
+    <br><br>
+    <table class="table table-bordered text-center">
+      <thead class="bg-info text-dark">
+        <tr>
+          <th>course Name</th>
+          <th>Duration</th>
+          <th>fee</th>
+          <th>startdate</th>
+          <th>timings</th>
+          <th>trainer_name</th>
+          <th>trainer_exp</th>
+          <th>training_mode</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for course in courses %}
+        <tr>
+          <td>{{course.course_name}}</td>
+          <td>{{course.duration}}</td>
+          <td>{{course.fee}}</td>
+          <td>{{course.startdate}}</td>
+          <td>{{course.timings}}</td>
+          <td>{{course.trainer_name}}</td>
+          <td>{{course.trainer_exp}}</td>
+          <td>{{course.training_mode}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div class="container-fluid">
+      <h2 class="text-center bg-info text-white pb-2">Training modes</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <img src="{% static 'images/offline.jpeg' %}" style="width:100%;height:100%" class="img-thumbnail">
+          <h4 class="text-center">offline</h4>
+        </div>
+        <div class="col-md-4">
+          <img src="{% static 'images/online.jpg' %}" style="width:100%;height:100%" class="img-thumbnail">
+          <h4 class="text-center">online</h4>
+        </div>
+        <div class="col-md-4">
+          <img src="{% static 'images/onoffe.jpg' %}" style="width:100%;height:100%"class="img-thumbnail">
+          <h4 class="text-center">offline and online</h4>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>

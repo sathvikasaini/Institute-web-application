@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% block title %}<title>Loginpage</title>{% endblock %}
+    {% include 'cdnlines.html' %}
+  </head>
+  <style media="screen">
+    input[name]{
+      margin-top:-10px;
+    }
+    form{
+      margin-top:100px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="offset-md-3 col-md-6">
+          <form method="POST" class="border px-3 py-3 shadow">
+            <h1 class="text-center bg-info text-white pb-2">Login</h1>
+            {% csrf_token %}
+            <label>Enter username</label>
+            <input type="text" name="username" class="form-control" placeholder="username">
+            <label>Enter Password</label>
+            <input type="password" name="password" class="form-control" placeholder="password">
+            <center class="mt-2">
+              <input type="submit" value="login" class="btn btn-info">
+              <input type="reset"  value="clear"class="btn btn-danger"><br>
+              <a href="{% url 'registrationpage' %}">New User</a>
+              {% include 'alerts.html' %}
+
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
